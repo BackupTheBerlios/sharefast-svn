@@ -1,0 +1,41 @@
+Protocole Client/Serveur
+--------------------------------------
+
+===================
+ Utilisation du Protocole UDP
+===================
+
+C>      (envois Client)
+S>      (envois Serveur)
+
+# Marqueur de fin d'envois : 2 retours chariots (\r\n)
+
+# Hierarchie de la liste :
+
+ - La racine contient les noms des domaines :
+        WorkGroup
+        MsHome
+        ...
+        
+ - Chaque domaine contient des hotes
+ - Chaque hotes contient des partages
+ 
+# Parcours dans la liste :
+
+ - Arbre
+ - Séparateur : /
+ 
+ exemple : /WORKGROUP/Homer242/
+ 
+# Format des echanges
+
+ - Message du client au serveur type commande unix
+ - Message du serveur au client type XML
+
+2) Récupération liste
+---------------------------------
+
+C> 'GET /'
+    (pour récupérer la liste à la racine)
+    
+S> '
